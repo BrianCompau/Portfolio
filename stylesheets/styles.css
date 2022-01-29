@@ -57,15 +57,6 @@ intro {
   width: 40%
 }
 
-code {
-  color: black;
-  position: absolute;
-  z-index: 1;
-  top: 150px;
-  margin-left: 20px;
-  width: 40%
-}
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -102,4 +93,9 @@ table a:hover {
 table a:active {
   color: blue;
   text-decoration: none;
+}
+
+iframe {
+  display: block;
+  text-align: center;
 }

@@ -16,28 +16,17 @@
 </nav>
 </div>
 
+<p id='page'>
+</p>
+
 <script>
-  function loadFile(e) {
-    removePopup({
-      name: 'image_picker'
-    });
-
-    const ff = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      const image = new Uint8Array(reader.result);
-
-      addLayer(image, image_index, export_size, 'photos', tariff !== null);
-    };
-    reader.readAsArrayBuffer(ff);
-  }</script>
-
-<div>
-<code>
-<input type='file' onchange='loadFile(e)'>
-</code>
-</div>
+function display() {
+  let params = (new URL(document.location)).searchParams;
+  let name = params.get('name');
+  document.getElementById('page').innerHTML = '<object data="https://cdn.rawgit.com/brcompau/Portfolio/main/'+name+'" width="550" height="10000"></object>';
+}
+display()
+</script>
 
 </body>
 </html>
