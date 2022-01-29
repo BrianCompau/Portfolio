@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<link rel="stylesheet" type="text/css" href="./stylesheets/styles.css">
+<script type="text/javascript" src="./script.js"></script>
+</head>
+<body>
+
+<div>
+<nav id="nav">
+<li><a href="./">Home</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="this_site.html">This Site</a></li>
+</nav>
+</div>
+
+<script>
+  function loadFile(e) {
+    removePopup({
+      name: 'image_picker'
+    });
+
+    const ff = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const image = new Uint8Array(reader.result);
+
+      addLayer(image, image_index, export_size, 'photos', tariff !== null);
+    };
+    reader.readAsArrayBuffer(ff);
+  }</script>
+
+<div>
+<code>
+<input type='file' onchange='loadFile(e)'>
+</code>
+</div>
+
+</body>
+</html>
